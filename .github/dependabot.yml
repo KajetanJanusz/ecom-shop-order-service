@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "dev"
+    allow:
+      - dependency-type: "all"
+    versioning-strategy: "auto"
+    labels:
+      - "dependabot"
+      - "python"
+    commit-message:
+      prefix: "dependabot-python"
+      include: "scope"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "dev"
+    labels:
+      - "dependabot"
+      - "docker"
+    commit-message:
+      prefix: "dependabot-docker"
+      include: "scope"
+
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+    labels:
+      - "dependabot"
+      - "github-actions"
+    commit-message:
+      prefix: "dependabot-ci"
+      include: "scope"
